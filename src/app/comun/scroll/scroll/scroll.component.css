@@ -1,0 +1,6 @@
+.image-BackTop {
+    background-image: url("src\assets\img\BackTop.svg");
+    background-size: cover;
+    margin: 10px 8px;
+    object-fit: contain; 
+} 

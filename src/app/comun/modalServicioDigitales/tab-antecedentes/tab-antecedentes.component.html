@@ -1,0 +1,122 @@
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Juicio Laboral">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="dataSourceJL == null || lengthJL == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceJL != null && lengthJL > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceJL" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsJuicioLaboral">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesJuicioLaboral"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceJL; columns: columnNamesJuicioLaboral;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthJL" 
+                [pageSize]="10" [pageIndex]="0" #paginatorJL> 
+                </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Investigación Laboral"  *ngIf="dataSourceIL != null && lengthIL > 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="dataSourceIL == null || lengthIL == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceIL != null && lengthIL > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceIL" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsInvestigacionLaboral">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesInvestigacionLaboral"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceIL; columns: columnNamesInvestigacionLaboral;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthIL" 
+                [pageSize]="10" [pageIndex]="0" #paginatorIL> 
+                </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Inconformidades" *ngIf="dataSourceI != null && lengthI > 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="dataSourceI == null || lengthI == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceI != null && lengthI > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceI" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsInconformidad">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesInconformidad"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceI; columns: columnNamesInconformidad;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthI" 
+                [pageSize]="10" [pageIndex]="0" #paginatorI> 
+                </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Juicio Fiscal" *ngIf="dataSourceJF != null && lengthJF > 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="dataSourceJF == null || lengthJF == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceJF != null && lengthJF > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceJF" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsJuicioFiscal">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesJuicioFiscal"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceI; columns: columnNamesJuicioFiscal;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthJF" 
+                [pageSize]="10" [pageIndex]="0" #paginatorJF> 
+                </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Responsabilidad patrimonial" *ngIf="dataSourceRP != null && lengthRP > 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="dataSourceRP == null || lengthRP == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceRP != null && lengthRP > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceRP" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsResponsabilidadPatrimonial">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesResponsabilidadPatrimonial"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceRP; columns: columnNamesResponsabilidadPatrimonial;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthRP" 
+                [pageSize]="10" [pageIndex]="0" #paginatorRP> 
+                </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

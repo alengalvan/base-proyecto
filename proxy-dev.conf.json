@@ -1,0 +1,39 @@
+{
+  "/msnmlssc-oauth": {
+    "target": "https://localhost:8081/msnmlssc-oauth",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/msnmlssc-oauth": "" }
+  },
+  "/msmaissc-amparos":{
+    "target": "https://localhost:8083/msmaissc-amparos",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/msmaissc-amparos": "" }
+  },
+  "/msmaissc-archivos":{
+    "target": "https://localhost:8084/msmaissc-archivos",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/msmaissc-archivos": "" }
+  },
+  "/msmaissc-interfaces":{
+    "target": "https://localhost:8085/msmaissc-interfaces",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/msmaissc-interfaces": "" }
+  },
+  "/guinmlssc-web": {
+    "target": "https://localhost:4201/guinmlssc-web",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/guinmlssc-web": "" }
+  },
+  "/msmaissc-reportes": {
+    "target": "https://localhost:8086/msmaissc-reportes",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/msmaissc-reportes": "" }
+  }
+
+}

@@ -1,0 +1,95 @@
+<alert></alert>
+
+<nav class="navbar nav-registro ">
+  <div class="container-fluid mat-elevation-z8">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="nav-titulo"><b> {{ subtitulo? subtitulo: nombreModulo }} </b></p>
+        <hr class="divisor">
+      </div>
+      <div class="col-xs-12">
+        <div class="subnavbar-titulo">
+          <div class="div-regresar">
+            <button mat-icon-button (click)="openModalSalir()" >
+              <mat-icon  role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">
+                arrow_back
+              </mat-icon>
+              <span class="regresar">Regresar</span>
+            </button>
+
+          </div>
+          <p class="nav-subtitulo">{{titulo}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Salir -->
+<div class="modal hide-modal" #tableModalSalir>
+  <div class="modal-dialog modal800" style="width: 600px!important;">
+      <div class="modal-content" style="border-radius: 15px; text-align: center;">
+          <div class="modal-header" style="background-color: white;border-radius: 15px;">
+              <span class="glyphicon glyphicon-remove pull-right" style="color: black; cursor: pointer;" aria-hidden="true"
+              (click)="closeModalSalir()"></span>
+          </div>
+          <div class="modal-body row" style="padding-top: 0;">
+              <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 0; margin: 0; margin-left: -3px;">
+                 <div class="image-cancelar image-size-30" style="height: 27px!important;"></div>
+              </div>
+              <h5 class="text-ellipsis" style="margin-bottom: 5px;">Abandonar registro</h5>
+              En caso de aceptar se perder&aacute; toda la informaci&oacute;n.
+              <hr  style="margin-top: 10px;">
+              <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 10px; font-size: 17px;">
+                 ¿Deseas continuar con la cancelaci&oacute;n?
+              </div>
+
+              <div class="col-md-12 p0" style="margin-top: 25px; margin-bottom: 25px;">
+                 <div class="col-xs-2"></div>
+                  <div class="col-xs-4">
+                      <button type="button" class="btn btn40 btn-default pt6"
+                          (click)="closeModalSalir()">Cancelar</button>
+                  </div>
+
+                  <div class="col-xs-4">
+                      <button type="button" class="btn btn40 btn-primary pt6"
+                          (click)="goToHome()">Aceptar</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Modal Salir -->
+
+<!-- Modal inactividad -->
+<div class="modal hide-modal" #tableModalSesion>
+  <div class="modal-dialog modal800">
+      <div class="modal-content" style="border-radius: 15px; text-align: center;">
+          <div class="modal-header" style="background-color: white;border-radius: 15px;">
+              <span class="glyphicon glyphicon-remove pull-right" style="color: black;" aria-hidden="true"
+                  (click)="closeStopModal()"></span>
+          </div>
+          <div class="modal-body row" style="padding-top: 0;">
+              <h4 class="text-ellipsis">La sesión está a punto de expirar</h4>
+              <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 10px; font-size: 18px;">
+                 ¿Desea continuar?
+              </div>
+
+              <div class="col-md-12 p0" style="margin-top: 25px; margin-bottom: 25px;">
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn40 btn-primary pt6" style="width: 200px;"
+                          (click)="closeStopModal()">Continuar</button>
+                  </div>
+
+                  <div class="col-md-6">
+                      <button type="button" class="btn btn40 btn-danger pt6" style="width: 200px;"
+                          (click)="salirSesion()">Salir</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Modal inactividad -->

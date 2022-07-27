@@ -1,0 +1,42 @@
+<mat-dialog-content>
+    <div style="width: 600px!important; text-align: center;">
+
+        <div class="modal-header" style="padding: 0 0 0 0; background-color: white;">
+            <span class="glyphicon glyphicon-remove pull-right" 
+                  style="color: black; cursor: pointer;" 
+                  aria-hidden="true"
+                  (click)="closeDialog()">
+            </span>
+        </div>
+
+        <div class="modal-body row" style="padding-top: 10px;">
+            
+            <div style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 0; margin: 0; margin-left: -3px;">
+                <div class="image-cancelar image-size-30" style="height: 27px!important;"></div>
+             </div>
+
+             <h5 class="text-ellipsis" style="margin-bottom: 5px;">{{ data.title }}</h5>
+             <hr style="margin-top: 10px;">
+
+             <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 10px; font-size: 17px;">
+                <textarea  
+                rows="8" 
+                disabled
+                value={{data.message}}
+                class="form-control"
+                style="resize: none; width: 100%;">
+                </textarea>
+             </div>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div class="col-md-12" style="text-align: center; margin-top: 25px; margin-bottom: 25px;">
+        <div class="col-md-1"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-1"></div> 
+    </div>
+</mat-dialog-actions>

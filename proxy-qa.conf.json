@@ -1,0 +1,47 @@
+{
+    "/msnmlssc-oauth": {
+      "target": "https://ssc-qa.cloudapps.imss.gob.mx/msnmlssc-oauth",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msnmlssc-oauth": "" }
+    },
+    "/msmaissc-catalogos":{
+      "target": "https://maivnmlssc-qa.cloudapps.imss.gob.mx/msmaissc-catalogos",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msmaissc-catalogos": "" }
+    },
+    "/msmaissc-amparos":{
+      "target": "https://maivnmlssc-qa.cloudapps.imss.gob.mx/msmaissc-amparos",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msmaissc-amparos": "" }
+    },
+    "/msmaissc-archivos":{
+      "target": "https://maivnmlssc-qa.cloudapps.imss.gob.mx/msmaissc-archivos",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msmaissc-archivos": "" }
+    },
+    "/msmaissc-interfaces":{
+      "target": "https://maivnmlssc-qa.cloudapps.imss.gob.mx/msmaissc-interfaces",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msmaissc-interfaces": "" }
+    },
+    "/guinmlssc-web": {
+      "target": "https://ssc-qa.cloudapps.imss.gob.mx/guinmlssc-web",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/guinmlssc-web": "" }
+    },
+    "/msmaissc-reportes": {
+      "target": "https://maivnmlssc-qa.cloudapps.imss.gob.mx/msmaissc-reportes",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/msmaissc-reportes": "" }
+    }
+
+
+
+}

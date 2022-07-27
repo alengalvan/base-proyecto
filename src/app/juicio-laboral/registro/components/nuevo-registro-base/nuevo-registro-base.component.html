@@ -1,0 +1,28 @@
+<!-- Header -->
+<div class="header-nav" [ngClass]="excluirGobMx ? 'sin-gobmx' : '' ">
+  <div style="width: 97%; padding: 0px;">
+     <a class="navbar-brand" href="{{urlBase}}" style="padding-left: 50px; color: #fff;">  Amparo Indirecto</a>
+
+     <div class="pull-right info-user">
+        <div class="row">
+           <span class="nombre-persona">
+              {{ name }}
+           </span>
+        </div>
+        <div class="row">
+           <span class="rol">
+              {{ role }}
+           </span>
+        </div>
+     </div>
+  </div>
+</div>
+<!-- Header -->
+
+<!-- Contenido -->
+<div class="contenido-nuevo" [ngClass]="excluirGobMx ? 'contenido-nuevo-sin-gobmx' : '' ">
+
+  <router-outlet name="registro"></router-outlet>
+
+</div>
+<!-- Contenido -->

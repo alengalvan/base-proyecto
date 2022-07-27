@@ -1,0 +1,7 @@
+﻿<div *ngFor="let alert of alerts" class="{{cssClass(alert)}}" style="top: 120px; left: 25%; width: 741px; height: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15); position:fixed; z-index:9999; padding-top: 8px; padding-right: -30px; width: 50%;
+display: block;
+float: right;
+margin-right: 25%;">
+    <a class="close" style="margin-top: -2px; color: black; text-decoration: none;" (click)="removeAlert(alert)">&times;</a>
+    <span [innerHTML]="alert.message"></span>
+</div>

@@ -1,0 +1,90 @@
+<mat-dialog-content>
+    <div style="text-align: center!important;;" style="max-width: 650px!important;">
+
+        <div class="modal-header" style="padding: 0 0 0 0; background-color: white;">
+            <div style="cursor: pointer; text-align: end; align-items: flex-end; align-content: flex-end; margin-top: 10px;">
+                <button type="button" style="font-style: none!important; background-color: white; border: white;"
+                    (click)="closeDialog()">
+                    <span class="glyphicon glyphicon-remove pull-right" 
+                        style="font-size: 20px; color: black;">
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal-body row" style="padding-top: 10px;">
+            
+            <div style="width:100%; display: flex; align-items: center; justify-content: center; padding: 0; margin: 0; margin-left: -3px;">
+                <div class="image-cancelar image-size-30" style="height: 27px!important;"></div>
+             </div>
+
+             <h5 class="text-ellipsis" style="text-align: center; margin-bottom: 5px;">Reasignar expediente</h5>
+             <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                <span>Valida la informaci&oacute;n para reasignar </span>
+            </div>
+            <hr style="margin-top: 5px;">
+
+            <div class="row" style="background-color: #f5f4f4; border-radius: 5px;">
+                <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 5px; font-size: 12px;">            
+                    <h6>Expedientes asignados  <strong>{{data?.totalElement}}</strong></h6> 
+                </div>
+    
+                <!--abogado-->
+                <div class="col-md-12" style="text-align: left; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                    <h6>Abogado al que se asignaron  </h6>
+                    <span> {{ data?.abogadoAsignado }} </span> 
+                </div>
+    
+                <!--usuario-->
+                <div class="col-md-4" style="text-align: left; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                    <h6>Usuario </h6>
+                    <span> {{ data?.usuario }} </span> 
+                </div>
+                <div class="col-md-4" style="text-align: left; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                    <h6>Perfil </h6>
+                    <span> {{ data?.perfil }} </span> 
+                </div>
+                <div class="col-md-4" style="text-align: left; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                    <h6>Materia </h6>
+                    <span> {{ data?.materia }} </span> 
+                </div>
+                
+                <!--delegacion-->
+                <div class="col-md-12" style="text-align: left; margin-top: 0px;margin-bottom: 5px; font-size: 15px;">            
+                    <h6>OOAD </h6>
+                    <span> {{ data?.ooad }} </span> 
+                </div>
+            </div>
+
+
+            <hr style="margin-top: 5px;">
+            <div class="col-md-12" style="text-align: center; margin-top: 0px;margin-bottom: 5px; font-size: 17px;">
+                ¿Deseas continuar?
+            </div>           
+
+        </div>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div class="col-md-12" style="text-align: center; margin-top: 25px; margin-bottom: 25px;">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <button type="button" 
+                    class="btn btn40 btn-default pt6" 
+                    (click)="closeDialog()">
+                    Cancelar
+            </button>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <button type="button" 
+                    class="btn btn40 btn-primary pt6" 
+                    (click)="confirmDialog()">
+                    Si, avanzar
+            </button>
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
+</mat-dialog-actions>

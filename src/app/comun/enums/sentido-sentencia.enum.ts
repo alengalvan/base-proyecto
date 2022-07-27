@@ -1,0 +1,6 @@
+export enum SENTIDO_SENTENCIA{
+  AMPARA = 1,
+  NIEGA = 2,
+  SOBRESEE = 3,
+  POR_AUTORIDAD = 4
+}

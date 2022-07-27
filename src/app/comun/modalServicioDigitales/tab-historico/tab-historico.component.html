@@ -1,0 +1,338 @@
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab [label]="etiqueta" *ngIf="lengthLE == 0 && lengthA == 0">
+        <div *ngIf="serviciosDigitales?.historiaLaboralList == null" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+            <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                Sin resultados
+            </span>
+        </div>
+    </mat-tab>
+    <mat-tab [label]="etiqueta" *ngIf="lengthLE != 0">
+        <div>
+            <div class="col-sm-12">
+                <div>
+                    <div>
+                        <div class="row" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Matr&iacute;cula</div>
+                            <div class="col-xs-3">{{dataLE[0]?.MATRICULA  != null ? dataLE[0]?.MATRICULA : ''}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Nombre(s)</div>
+                            <div class="col-xs-3">{{dataLE[0].NOMBRE}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Apellido paterno</div>
+                            <div class="col-xs-3">{{dataLE[0].APELLIDO_PATERNO}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Apellido materno</div>
+                            <div class="col-xs-3">{{dataLE[0].APELLIDO_MATERNO}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Adscripci&oacute;n</div>
+                            <div class="col-xs-3">''</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Categor&iacute;a</div>
+                            <div class="col-xs-3">{{dataLE[0].DES_PUESTO}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Nombre de &aacute;rea</div>
+                            <div class="col-xs-3" style="overflow: hidden; white-space: nowrap; 
+                            text-overflow: ellipsis;">{{dataLE[0].DES_AREA}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Cuant&iacute;a</div>
+                            <div class="col-xs-3">{{dataLE[0].CUANTIA_BASICA}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Estatus actor</div>
+                            <div class="col-xs-3">{{dataLE[0].STATUS}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">CURP</div>
+                            <div class="col-xs-3">{{dataLE[0].CURP}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">RFC</div>
+                            <div class="col-xs-3">{{dataLE[0].RFC}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Tipo de empleado</div>
+                            <div class="col-xs-3">{{dataLE[0].TIPO_EMPLEADO}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">NSS</div>
+                            <div class="col-xs-3">{{dataLE[0].NSS}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Localidad</div>
+                            <div class="col-xs-3">{{dataLE[0].LOCALIDAD}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">OOAD</div>
+                            <div class="col-xs-3">{{dataLE[0].DES_DELEGACION}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Fecha de jubilaci&oacute;n/pensión</div>
+                            <div class="col-xs-3">{{dataLE[0].FECHA_JUB_PEN}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Ult. quincena pagada</div>
+                            <div class="col-xs-3">{{dataLE[0].QUINCENA_MES}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Porcentaje de pensión</div>
+                            <div class="col-xs-3">{{dataLE[0].PORCENTAJE_PENSION}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Tipo de jubilaci&oacute;n</div>
+                            <div class="col-xs-3">{{dataLE[0].TIPO_JUBILACION}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Fecha de baja</div>
+                            <div class="col-xs-3">{{dataLE[0].FECHA_BAJA}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Ingreso laboral</div>
+                            <div class="col-xs-3">{{dataLE[0].FECHA_INGRESO}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Quincenas de antig&uuml;edad</div>
+                            <div class="col-xs-3">{{dataLE[0].ANT_QNAS}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Antig&uuml;edad</div>
+                            <div class="col-xs-3">{{dataLE[0].ANT_ANIOS}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Clave de baja</div>
+                            <div class="col-xs-3">{{dataLE[0].CLAVE_BAJA}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">D&iacute;as de antig&uuml;edad</div>
+                            <div class="col-xs-3">{{dataLE[0].ANT_DIAS}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Fecha de modificaci&oacute;n</div>
+                            <div class="col-xs-3">{{dataLE[0].FECHA_MODIFICACION}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Motivo de baja</div>
+                            <div class="col-xs-3">{{dataLE[0].DES_BAJA}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Tipo de contrataci&oacute;n</div>
+                            <div class="col-xs-3">{{dataLE[0].TIPO_EMPLEADO}}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="lengthP != 0">
+                        <hr>
+                        <div>
+                            <div class="row">
+                                <div class="col-xs-12" style="text-align: left;">
+                                    <span style="font-weight: bold;">Pension del actor seleccionado</span>
+                                </div>
+                            </div>
+                            <div class="row" style="text-align: left; margin-top: 20px; margin-bottom: 10px; font-weight: bold;">
+                                <div class="col-xs-3">Fecha inicio</div>
+                                <div class="col-xs-3">Incidente</div>
+                                <div class="col-xs-3">Tipo</div>
+                                <div class="col-xs-3">Importe mensual</div>
+                            </div>
+                            <div class="row" style="text-align: left;" *ngFor="let row of dataP">
+                                <div class="col-xs-3">{{row.fechaInicioPension | date: 'dd/MM/yyyy'}}</div>
+                                <div class="col-xs-3">{{row.idIncidencia}}</div>
+                                <div class="col-xs-3">{{row.idTipoPension}}</div>
+                                <div class="col-xs-3">{{ row.importeMensualPension == null ? '$ 0.00': (row.importeMensualPension | currency )|| '$ 0.00' }}</div>
+                            </div>
+                        </div>                                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+
+    <mat-tab [label]="etiqueta" *ngIf="lengthLE != 0 ? false : lengthA != 0? true : false">
+        <div>
+            <div class="col-sm-12">
+                <div>
+                    <div>
+                        <div class="row" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Afiliaci&oacute;n</div>
+                            <div class="col-xs-3">{{dataA.nss}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Matr&iacute;cula</div>
+                            <div class="col-xs-3">{{''}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">CURP</div>
+                            <div class="col-xs-3">{{dataA.curp}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">RFC</div>
+                            <div class="col-xs-3">{{dataA.rfc}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Nombre</div>
+                            <div class="col-xs-3">{{dataA.nombre}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Apellido paterno</div>
+                            <div class="col-xs-3">{{dataA.primerApellido}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Apellido materno</div>
+                            <div class="col-xs-3">{{dataA.segundoApellido}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">UMF</div>
+                            <div class="col-xs-3">{{''}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">G&eacute;nero</div>
+                            <div class="col-xs-3">{{dataA.sexo? dataA.descripcion : ''}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Entidad nacimiento</div>
+                            <div class="col-xs-3">{{dataA.lugarNacimiento? dataA.lugarNacimiento.nombre : ''}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">Fecha nacimiento</div>
+                            <div class="col-xs-3">{{dataA.fechaNacimiento}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Subdelegaci&oacute;n</div>
+                            <div class="col-xs-3">{{''}}</div>
+                        </div>
+                        <div class="row" style="text-align: left; margin-top: 10px; font-size: 13px;">
+                            <div class="col-xs-3" style="font-weight: bold;">OOAD</div>
+                            <div class="col-xs-3">{{''}}</div>
+                            <div class="col-xs-3" style="font-weight: bold;">Salario base</div>
+                            <div class="col-xs-3">{{''}}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="lengthP != 0">
+                        <hr>
+                        <div>
+                            <div class="row">
+                                <div class="col-xs-12" style="text-align: left;">
+                                    <span style="font-weight: bold;">Pension del actor seleccionado</span>
+                                </div>
+                            </div>
+                            <div class="row" style="text-align: left; margin-top: 20px; margin-bottom: 10px; font-weight: bold;">
+                                <div class="col-xs-3">Fecha inicio</div>
+                                <div class="col-xs-3">Incidente</div>
+                                <div class="col-xs-3">Tipo</div>
+                                <div class="col-xs-3">Importe mensual</div>
+                            </div>
+                            <div class="row" style="text-align: left;" *ngFor="let row of dataP">
+                                <div class="col-xs-3">{{row.fechaInicioPension | date: 'dd/MM/yyyy'}}</div>
+                                <div class="col-xs-3">{{row.idIncidencia}}</div>
+                                <div class="col-xs-3">{{row.idTipoPension}}</div>
+                                <div class="col-xs-3">{{ row.importeMensualPension == null ? '$ 0.00': (row.importeMensualPension | currency )|| '$ 0.00' }}</div>                            </div>
+                        </div>                                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Hist&oacute;rico laboral" *ngIf="dataSourceH != null && lengthH > 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            
+            <div *ngIf="dataSourceH == null || lengthH == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="dataSourceH != null && lengthH > 0">
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceH" style="width: 100%;">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumns">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> {{row[column?.name]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+                        <tr mat-row *matRowDef="let row of dataSourceH; columns: columnNames;"></tr>
+                    </table>
+                </div>
+                <mat-paginator  [length]="lengthH" 
+                [pageSize]="10" [pageIndex]="0" #paginatorH> </mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Prestaciones econ&oacute;micas" *ngIf="lengthP != 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="lengthP == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="lengthP != 0">
+                <div class="col-sm-6">
+                    <div class="contenido-left" style="padding-left: 10px; padding-top: 10px;">
+                        <span><strong>Grupo familiar</strong></span>
+                        <span style="padding-left: 5px;">
+                            ID: {{dataA ? dataA.gruposFamiliares ? dataA.gruposFamiliares[0].idGrupoFamiliar : '' : ''}}
+                        </span>
+                        <span>
+                            N&uacute;mero de pagos emitidos: {{dataA ? dataA.gruposFamiliares ? dataA.gruposFamiliares[0].numPagosEmitidos : '' : ''}}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="contenido-left" style="padding-left: 10px; padding-top: 10px;">
+                        <span><strong>OOAD</strong> {{dataA? (dataA.desDelegacion | titlecase) : ''}}</span><br>
+                        <span><strong>Sub delegaci&oacute;n</strong> {{dataA? (dataA.desSubdelegacion | titlecase) : ''}}</span>    
+                    </div>
+                </div>                                
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSourceP">
+                        <ng-container matColumnDef="{{column.name}}" *ngFor="let column of displayedColumnsPrestaciones">
+                            <th mat-header-cell *matHeaderCellDef> {{column?.columName}}</th>
+                            <td mat-cell *matCellDef="let row"> 
+                                <span *ngIf="column?.name === 'fechaInicioPension'">
+                                    {{ row[column?.name] | date: 'dd/MM/yyyy' }}
+                                </span>
+                                <span *ngIf="column?.name != 'fechaInicioPension'">
+                                    {{row[column?.name] }}
+                                </span>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="columnNamesPrestaciones"></tr>
+                        <tr mat-row *matRowDef="let row of dataP columns: columnNamesPrestaciones;"></tr>
+
+                    </table>
+                </div>
+                <mat-paginator [length]="lengthP" [pageIndex]="0" 
+                [pageSize]="10" #paginatorP></mat-paginator>
+            </div>
+        </div>
+    </mat-tab>
+        
+    <mat-tab label="Diagn&oacute;stico" *ngIf="lengthD != 0">
+        <div class="row" style="padding: 0; margin: 0;">
+            <div *ngIf="lengthD == 0" style="width: 100%; height: 150px; text-align: center; padding-top: 80px;">
+                <span style="font-size: 20px; color: rgba(0,0,0,0.2);">
+                    Sin resultados
+                </span>
+            </div>
+            <div *ngIf="lengthD != 0">
+                <div class="table-container">
+                    <div>
+                        <div class="col-sm-12">
+                            <div>
+                                <div *ngFor="let element of dataD">
+                                    <div class="row">
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-6"> {{ displayedColumnsDiagnostico[0].columName }} <span style="font-weight: bold;"> {{ element.idDiagnostico }} </span></div>
+                                        </div>
+                                        <div class="col" style="text-align: right; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-6"> {{ displayedColumnsDiagnostico[1].columName }} <span style="font-weight: bold;"> {{ (element.porValuacion/100) | percent }} </span></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"> {{ displayedColumnsDiagnostico[2].columName }} </div>
+                                            <div class="col-xs-9"> {{ displayedColumnsDiagnostico[3].columName }}: <span style="font-weight: bold;"> {{ element.cveRiesgo }} </span></div>
+                                        </div>
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"></div>
+                                            <div class="col-xs-9"> {{ element.desRiesgo }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"> {{ displayedColumnsDiagnostico[4].columName }} </div>
+                                            <div class="col-xs-9"> {{ displayedColumnsDiagnostico[5].columName }}: <span style="font-weight: bold;"> {{ element.cveDiagnostico513 }} </span></div>
+                                        </div>
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"></div>
+                                            <div class="col-xs-9"> {{ element.desDiagnostico513 }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"> {{ displayedColumnsDiagnostico[6].columName }} </div>
+                                            <div class="col-xs-9"> {{ displayedColumnsDiagnostico[7].columName }}: <span style="font-weight: bold;"> {{ element.cveDiagnostico514 }} </span></div>
+                                        </div>
+                                        <div class="col" style="text-align: left; margin-top: 20px; font-size: 13px;">
+                                            <div class="col-xs-3"></div>
+                                            <div class="col-xs-9"> {{ element.desDiagnostico514 }} </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <mat-paginator [length]="lengthD" [pageIndex]="0" 
+                [pageSize]="2" #paginatorD></mat-paginator>
+                
+            </div>
+        </div>
+    </mat-tab> 
+</mat-tab-group>

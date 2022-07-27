@@ -1,0 +1,5 @@
+export enum SENTIDO_RESOLUCION_SUSP_PROV{
+  CONCEDE = 1,
+  NIEGA = 2,
+  SIN_MATERIA = 3
+}
